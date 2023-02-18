@@ -1,2 +1,2 @@
 # Bookster
-Lets plan your stay!
+Lets plan your next stay!
