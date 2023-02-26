@@ -6,8 +6,18 @@ import PropertyList from "../../components/propertyList/PorpertyList";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
+import { SearchContext } from "../../context/SearchContext";
+import React, { useContext } from "react";
 
-function Home() {
+const Home = () => {
+
+    // const { dispatch, ...others } = useContext(SearchContext);
+    // dispatch({ type: "RESET_SEARCH" });
+
+    // React.useEffect(() => {
+    //     console.log("Home page:", others)
+    // }, [others]);
+
     return (
         <div>
             <Navbar />

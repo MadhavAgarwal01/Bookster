@@ -1,13 +1,29 @@
 import { useReducer } from "react";
 import { createContext } from "react";
 
+// const INITIAL_STATE = {
+//     destination: undefined,
+//     date: [],
+//     type: undefined,
+//     options: {
+//         adult: undefined,
+//         children: undefined,
+//         room: undefined
+//     }
+// };
+
+const today = new Date();
+const nextDay = new Date();
+nextDay.setDate(today.getDate() + 1);
+
 const INITIAL_STATE = {
     destination: undefined,
-    date: [],
+    date: [today, nextDay],
+    type: undefined,
     options: {
-        adult: undefined,
-        children: undefined,
-        room: undefined
+        adult: 1,
+        children: 0,
+        room: 1
     }
 };
 
@@ -27,13 +43,14 @@ const SearchReducer = (state, action) => {
 
 export const SearchContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
-    console.log("Inside Context Provider!", state);
+    // console.log("Inside Context Provider!", state);
 
     return (
         <SearchContext.Provider
             value={{
                 destination: state.destination,
                 date: state.date,
+                type: state.type,
                 options: state.options,
                 dispatch,
             }}

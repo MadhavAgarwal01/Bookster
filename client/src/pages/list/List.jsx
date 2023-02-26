@@ -1,5 +1,6 @@
 import react, { useContext, useState } from "react";
 import React from 'react';
+import Select from 'react-select'
 import { useLocation } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
@@ -18,25 +19,41 @@ function List() {
     const con_destination = others.destination;
     const con_options = others.options;
     const con_date = others.date;
+    const con_type = others.type;
     React.useEffect(() => {
-        console.log("List effect!", { con_destination, con_date, con_options });
-    }, [{ con_destination, con_date, con_options }]);
+        console.log("List effect!", { con_destination, con_date, con_type, con_options });
+    }, [{ con_destination, con_date, con_type, con_options }]);
 
     const [destination, setDestination] = useState(con_destination);
     const [options, setOptions] = useState(con_options);
     const [date, setDate] = useState(con_date);
+    const typeArray = ["hotel", "apartments", "resorts", "villas", "cabin"];
+    const typeIndex = Math.max(0, typeArray.findIndex((element) => element == con_type));
+
+    const types = [
+        { value: "hotel", label: "hotel" },
+        { value: "apartments", label: "apartments" },
+        { value: "resorts", label: "resorts" },
+        { value: "villas", label: "villas" },
+        { value: "cabin", label: "cabin" }];
+    const [selectedOption, setSelectedOption] = useState(types[typeIndex]);
+    const type = selectedOption.value;
+
+    React.useEffect(() => {
+        console.log("Type effect!", selectedOption);
+    }, [selectedOption]);
 
     const [openDate, setOpenDate] = useState(false);
     const [min, setMin] = useState(undefined);
     const [max, setMax] = useState(undefined);
 
     const { data, loading, reFetch } = useFetch(
-        `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
+        `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}&type=${type}`
     );
 
     const handleClick = () => {
         console.log("Search button clicked!");
-        dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
+        dispatch({ type: "NEW_SEARCH", payload: { destination, date, type, options } });
         reFetch();
     }
 
@@ -57,14 +74,24 @@ function List() {
                             <span onClick={() => { setOpenDate(!openDate) }}>
                                 {`${format(date[0].startDate, "dd/MM/yyy")} to ${format(date[0].endDate, "dd/MM/yyy")}`}
                             </span>
-                            {openDate && <DateRange
-                                editableDateInputs={true}
-                                onChange={(item) => setDate([item.selection])}
-                                moveRangeOnFirstSelection={false}
-                                ranges={date}
-                                minDate={new Date()}
-                                className="date"
-                            />}
+                            {openDate &&
+                                <DateRange
+                                    editableDateInputs={true}
+                                    onChange={(item) => setDate([item.selection])}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={date}
+                                    minDate={new Date()}
+                                />}
+                        </div>
+                        <div className="lsItem">
+                            <label>Destination</label>
+                            <Select
+                                defaultValue={types[typeIndex]}
+                                isClearable={true}
+                                isSearchable={true}
+                                options={types}
+                                onChange={setSelectedOption}
+                            />
                         </div>
                         <div className="lsItem">
                             <label>Options</label>
@@ -108,6 +135,7 @@ function List() {
                             "loading"
                         ) : (
                             <>
+                                <span>{data.length} results for "{destination}"</span>
                                 {data.map((item) => (
                                     <SearchItem item={item} key={item._id} />
                                 ))}

@@ -1,9 +1,24 @@
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
 import "./FeaturedProperties.css";
 
 function FeaturedProperties() {
 
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+  const navigate = useNavigate();
+
+  const { dispatch, ...others } = useContext(SearchContext);
+  // React.useEffect(() => {
+  //   console.log("Home page:", others);
+  // }, [others]);
+
+  const handleClick = async (id) => {
+    console.log("Featured Property for: ", id);
+    // await dispatch({ type: "RESET_SEARCH" });
+    navigate(`/hotels/${id}`);
+  };
 
   return (
     <div className="fp">
@@ -12,7 +27,7 @@ function FeaturedProperties() {
       ) : (
         <>
           {data.map((item) => (
-            <div className="fpItem" key={item._id}>
+            <div className="fpItem" key={item._id} onClick={() => handleClick(item._id)}>
               <img
                 src={item.photos[0]}
                 alt=""

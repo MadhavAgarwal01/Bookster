@@ -32,7 +32,6 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 0.8rem;
-    z-index: 8;
 }
 
 .lsItem>label{
@@ -44,6 +43,7 @@
     border: none;
     padding: 0.6rem;  
     border: none;
+    color: black;
 }
 
 .lsItem>span{

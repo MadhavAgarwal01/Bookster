@@ -17,25 +17,22 @@
 }
 
 .cancelPolicy{
-    position: relative;
     top: 1.7rem;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    margin-top: 1.4rem;
+    margin-top: 3.4rem;
 }
 
 .siCancelOp{
     font-size: 1rem;
     color: #008009;
     font-weight: bold;
-    z-index: 0;
 }
 
 .siCancelOpSubtitle{
     font-size: 0.8rem;
     color: #008009;
-    z-index: 0;
 }
 
 .siImg{

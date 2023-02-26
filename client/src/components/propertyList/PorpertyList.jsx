@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
 import "./PropertyList.css";
 
@@ -11,6 +14,18 @@ const PropertyList = () => {
     "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
     "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
   ];
+  const navigate = useNavigate();
+  const { dispatch, ...others } = useContext(SearchContext);
+
+  const handleClick = async (typeName) => {
+    console.log("Featured clicked for: ", typeName);
+    await dispatch({ type: "NEW_SEARCH", payload: { ...others, type: typeName } });
+    navigate("/hotels");
+  };
+
+  React.useEffect(() => {
+    console.log("PropertyList Context:", others);
+  }, [others]);
 
   return (
     <div className="pList">
@@ -20,7 +35,7 @@ const PropertyList = () => {
         <>
           {data &&
             images.map((img, i) => (
-              <div className="pListItem" key={i}>
+              <div className="pListItem" key={i} onClick={() => handleClick(data[i]?.type)}>
                 <img
                   src={img}
                   alt=""

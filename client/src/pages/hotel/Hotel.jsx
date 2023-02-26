@@ -21,6 +21,8 @@ import Reserve from "../../components/reserve/Reserve";
 const Hotel = () => {
     const location = useLocation().pathname;
     const id = location.split("/")[2];
+    console.log("Hotel id: ", id)
+
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
     const [openModal, setOpenModal] = useState(false);

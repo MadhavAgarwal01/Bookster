@@ -8,7 +8,7 @@ function Navbar() {
     const { user, loading, error, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
 
     const logoutBtn = async () => {
         dispatch({ type: "LOGOUT" });
