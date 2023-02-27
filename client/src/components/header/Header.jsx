@@ -53,27 +53,36 @@ function Header({ type }) {
         navigate("/hotels")
     };
 
+    const handleClick = event => {
+        document.getElementById("stays").classList.remove("active");
+        document.getElementById("flights").classList.remove("active");
+        document.getElementById("car_rentals").classList.remove("active");
+        document.getElementById("attractions").classList.remove("active");
+        document.getElementById("airport_taxis").classList.remove("active");
+        event.currentTarget.classList.add('active');
+    };
+
     return (
         <div className="header">
             <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
                 <div className="headerList">
-                    <div className="headerListItem active">
+                    <div className='headerListItem' onClick={handleClick} id="stays">
                         <FontAwesomeIcon icon={faBed} />
                         <span>Stays</span>
                     </div>
-                    <div className="headerListItem">
+                    <div className='headerListItem' onClick={handleClick} id="flights">
                         <FontAwesomeIcon icon={faPlane} />
                         <span>Flights</span>
                     </div>
-                    <div className="headerListItem">
+                    <div className='headerListItem' onClick={handleClick} id="car_rentals">
                         <FontAwesomeIcon icon={faCar} />
                         <span>Car rentals</span>
                     </div>
-                    <div className="headerListItem">
+                    <div className='headerListItem' onClick={handleClick} id="attractions">
                         <FontAwesomeIcon icon={faMountainCity} />
                         <span>Attractions</span>
                     </div>
-                    <div className="headerListItem">
+                    <div className='headerListItem' onClick={handleClick} id="airport_taxis">
                         <FontAwesomeIcon icon={faTaxi} />
                         <span>Airport taxis</span>
                     </div>

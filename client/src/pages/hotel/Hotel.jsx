@@ -29,7 +29,7 @@ const Hotel = () => {
     const navigate = useNavigate();
 
     const { data, loading, error, reFetch } = useFetch(`/hotels/find/${id}`);
-    const { user } = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
     const { date, options } = useContext(SearchContext);
 
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -56,11 +56,16 @@ const Hotel = () => {
         setSlideNumber(newSlideNumber)
     };
 
-    const handleClick = () => {
+    const handleClick = async () => {
         if (user) {
             setOpenModal(true);
         } else {
-            navigate("/login");
+            try {
+                dispatch({ type: "CUR_LOC", payload: location });
+                navigate("/login")
+            } catch (err) {
+                console.log(err);
+            }
         }
     };
 
@@ -93,7 +98,7 @@ const Hotel = () => {
                         </div>
                     )}
                     <div className="hotelWrapper">
-                        <button className="bookNow">Reserve or Book Now!</button>
+                        <button onClick={handleClick} className="bookNow">Reserve or Book Now!</button>
                         <h1 className="hotelTitle">{data.name}</h1>
                         <div className="hotelAddress">
                             <FontAwesomeIcon icon={faLocationDot} />

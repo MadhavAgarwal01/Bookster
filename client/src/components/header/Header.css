@@ -19,8 +19,9 @@
 
   .headerList{
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     margin-bottom: 3rem;
+    height: 3rem;
   }
 
   .headerListItem{
@@ -28,11 +29,17 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    padding: 0.8rem;
+    border: 0.1rem solid #003580;
   }
 
   .headerListItem.active{
     border: 0.1rem solid white;
-    padding: 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .headerListItem:hover{
+    border: 0.1rem solid white;
     border-radius: 1rem;
   }
 
