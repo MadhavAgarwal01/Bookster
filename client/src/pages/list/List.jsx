@@ -28,7 +28,7 @@ function List() {
     const [options, setOptions] = useState(con_options);
     const [date, setDate] = useState(con_date);
     const typeArray = ["hotel", "apartments", "resorts", "villas", "cabin"];
-    const typeIndex = Math.max(0, typeArray.findIndex((element) => element == con_type));
+    const typeIndex = Math.max(0, typeArray.findIndex((element) => element === con_type));
 
     const types = [
         { value: "hotel", label: "hotel" },
@@ -131,16 +131,19 @@ function List() {
                         <button className="lsSearch" onClick={handleClick}>Search</button>
                     </div>
                     <div className="listResult">
-                        {loading ? (
+                        {loading ?
                             "loading"
-                        ) : (
+                            :
                             <>
-                                <span>{data.length} results for "{destination}"</span>
+                                {(destination === undefined || destination === "") ?
+                                    "" :
+                                    <span>{data.length} results for "{destination}"</span>
+                                }
                                 {data.map((item) => (
                                     <SearchItem item={item} key={item._id} />
                                 ))}
                             </>
-                        )}
+                        }
                     </div>
                 </div>
             </div>

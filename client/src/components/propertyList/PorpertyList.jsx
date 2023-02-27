@@ -19,7 +19,7 @@ const PropertyList = () => {
 
   const handleClick = async (typeName) => {
     console.log("Featured clicked for: ", typeName);
-    await dispatch({ type: "NEW_SEARCH", payload: { ...others, type: typeName } });
+    await dispatch({ type: "NEW_SEARCH", payload: { ...others, destination: "", type: typeName } });
     navigate("/hotels");
   };
 
