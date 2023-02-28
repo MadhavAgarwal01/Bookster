@@ -10,11 +10,17 @@
   .headerContainer {
     width: 100%;
     max-width: 64rem;
-    margin: 1rem 0rem 8rem 0rem;
+    margin: 1rem 2rem 8rem 1rem;
   }
 
   .headerContainer.listMode{
-    margin: 1rem 0rem 0rem 0rem;
+    margin: 1rem 2rem 0rem 1rem;
+  }
+
+  .headerSearchParent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .headerList{
@@ -69,15 +75,16 @@
     bottom: -2.5rem;
     width: 100%;
     max-width: 64rem;
+    margin-left: 0.5rem;
   }
-
+  
   .headerIcon{
     color: lightgray;
   }
-
+  
   .headerSearchItem{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 0.1rem;
     background-color: white;
     padding: 1.3rem 2.7rem;
@@ -86,12 +93,12 @@
   
   .headerSearchBtn{
     width: 9rem;
-    background-color: #0071c2;
-    color: white;
-    font-weight: 500;
-    border: none;
-    border-radius:  0rem 0.5rem 0.5rem 0rem;
     padding: 1.3rem;
+    font-weight: 500;
+    border-radius:  0rem 0.5rem 0.5rem 0rem;
+    color: white;
+    background-color: #0071c2;
+    border: none;
     cursor: pointer;
   }
 

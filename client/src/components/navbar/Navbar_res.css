@@ -1,0 +1,28 @@
+/* TABLET */
+@media screen  and (min-width: 769px) and (max-width: 1023px) {
+
+.navButton{
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #003580;
+}
+}
+
+/* MOBILE */
+@media screen  and (max-width: 768px) {
+
+.navButton{
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #003580;
+    margin-left: 0rem;
+}
+
+.navItems{
+     display: flex;
+     justify-content: space-between;
+     gap: 1rem;
+}
+}
