@@ -1,0 +1,34 @@
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .listWrapper{
+        display: flex;
+        flex-direction: column;
+        width: 100%;    
+        max-width: 64rem;
+        gap: 2rem;
+    }
+
+    .listSearch{
+        flex: 1;
+        background-color: #febb02;
+        padding: 0.6rem;
+        border-radius: 0.5rem;
+        position: static;
+        top: 1rem;
+        height: max-content;
+    }
+
+    .searchFilterToggle{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        background-color: #febb02;
+        color: #555;
+        border-radius: 0.5rem;
+        padding: 1rem;
+    }
+
+    .hamburger{
+        font-size: 1.5rem;
+    }
+}
