@@ -10,11 +10,11 @@
   .headerContainer {
     width: 100%;
     max-width: 64rem;
-    margin: 1rem 2rem 8rem 1rem;
+    margin: 1rem 1rem 8rem 1rem;
   }
 
   .headerContainer.listMode{
-    margin: 1rem 2rem 0rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
   }
 
   .headerSearchParent{

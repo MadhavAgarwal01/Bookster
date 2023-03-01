@@ -1,0 +1,25 @@
+/* TABLET and MOBILE*/
+@media screen and (max-width: 1023px) {
+
+    .fp {
+        width: fit-content;      
+        max-width: 64rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        overflow-x: auto;
+      }
+      
+      /* .fp::-webkit-scrollbar {
+          display: none;
+      } */
+      
+      .fpItem{
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        text-transform: capitalize;
+        flex: 10 0 auto
+      }
+}

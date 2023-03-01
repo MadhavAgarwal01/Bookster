@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
 import "./PropertyList.css";
+import "./PropertyList_res.css";
 
 const PropertyList = () => {
   const { data, loading, error } = useFetch("/hotels/countByType");
@@ -28,28 +29,24 @@ const PropertyList = () => {
   }, [others]);
 
   return (
-    <div className="pList">
-      {loading ? (
-        "loading"
-      ) : (
-        <>
-          {data &&
-            images.map((img, i) => (
-              <div className="pListItem" key={i} onClick={() => handleClick(data[i]?.type)}>
-                <img
-                  src={img}
-                  alt=""
-                  className="pListImg"
-                />
-                <div className="pListTitles">
-                  <h1>{data[i]?.type}</h1>
-                  <h2>{data[i]?.count} {data[i]?.type}</h2>
-                </div>
+    loading ?
+      "loading" :
+      <div className="pList">
+        {data &&
+          images.map((img, i) => (
+            <div className="pListItem" key={i} onClick={() => handleClick(data[i]?.type)}>
+              <img
+                src={img}
+                alt=""
+                className="pListImg"
+              />
+              <div className="pListTitles">
+                <h1>{data[i]?.type}</h1>
+                <h2>{data[i]?.count} {data[i]?.type}</h2>
               </div>
-            ))}
-        </>
-      )}
-    </div>
+            </div>
+          ))}
+      </div>
   );
 };
 

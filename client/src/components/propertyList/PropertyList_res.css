@@ -1,0 +1,25 @@
+/* TABLET and MOBILE*/
+@media screen and (max-width: 1023px) {
+
+    .pList{
+        width: fit-content;      
+        max-width: 64rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2rem;
+        overflow-x: auto;
+    }
+      
+      /* .fp::-webkit-scrollbar {
+          display: none;
+      } */
+
+    .pListItem{
+        flex: 10 0 auto;
+        border-radius: 0.5rem 0.5rem 0rem 0rem;
+        text-transform: capitalize;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+    }
+}

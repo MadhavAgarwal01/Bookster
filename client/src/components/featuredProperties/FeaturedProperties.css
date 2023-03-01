@@ -1,6 +1,5 @@
 .fp {
     width: 100%;
-    min-width: 64rem;
     max-width: 64rem;
     display: flex;
     justify-content: space-between;

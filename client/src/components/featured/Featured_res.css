@@ -1,0 +1,28 @@
+/* TABLET and MOBILE*/
+@media screen and (max-width: 1023px) {
+    
+    .featured{
+        width: 100%;
+        max-width: 64rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        z-index: 1;
+        overflow-x: auto;
+    }
+    
+    /* .fp::-webkit-scrollbar {
+        display: none;
+    } */
+    
+    .featuredItem{
+        position: relative;
+        color: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        height: 16rem;
+        cursor: pointer;
+        text-transform: capitalize;
+        flex: 10 0 auto
+    }
+}

@@ -1,4 +1,5 @@
 import "./Home.css"
+import "./Home_res.css"
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import Featured from "../../components/featured/Featured";
@@ -24,14 +25,18 @@ const Home = () => {
             <Header />
             <div className="homeContainer">
                 <Featured />
-                <div className="homeItem">
+
+                <div className="homeItem" id="firstItem">
                     <h1 className="homeTitle">Browse by property</h1>
                     <PropertyList />
                 </div>
+
                 <div className="homeItem">
                     <h1 className="homeTitle">Homes guests love</h1>
                     <FeaturedProperties />
                 </div>
+            </div>
+            <div className="mailFooter">
                 <MailList />
                 <Footer />
             </div>

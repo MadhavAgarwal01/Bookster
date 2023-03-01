@@ -1,9 +1,13 @@
 import "./Footer.css";
+import { useMediaQuery } from 'react-responsive';
 
-function Footer(){
+function Footer() {
+
+  const isMobileOrTablet = useMediaQuery({ query: `(max-width: 1024px)` });
+
   return (
     <div className="footer">
-      <div className="fLists">
+      {!isMobileOrTablet && <div className="fLists">
         <ul className="fList">
           <li className="fListItem">Countries</li>
           <li className="fListItem">Regions</li>
@@ -11,14 +15,6 @@ function Footer(){
           <li className="fListItem">Districts</li>
           <li className="fListItem">Airports</li>
           <li className="fListItem">Hotels</li>
-        </ul>
-        <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
         </ul>
         <ul className="fList">
           <li className="fListItem">Unique places to stay </li>
@@ -43,10 +39,10 @@ function Footer(){
           <li className="fListItem">Investor relations</li>
           <li className="fListItem">Terms & conditions</li>
         </ul>
+      </div>}
+      <div className="fText">
+        <p>Copyright © 1996-2023 Bookster™. All rights reserved.</p>
       </div>
-        <div className="fText">
-            <p>Copyright © 1996-2023 Bookster™. All rights reserved.</p>
-        </div>
     </div>
   );
 };

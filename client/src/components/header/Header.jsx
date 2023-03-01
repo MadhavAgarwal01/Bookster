@@ -66,7 +66,7 @@ function Header({ type }) {
         document.getElementById("airport_taxis").classList.remove("active");
         event.currentTarget.classList.add('active');
     };
-    const isMobile = useMediaQuery({ query: `(max-width: 767px)` });
+    const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
     const [openHeaderList, setOpenHeaderList] = useState(false);
 
     return (

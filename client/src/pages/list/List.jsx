@@ -16,6 +16,8 @@ import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import MailList from "../../components/mailList/MailList";
+import Footer from "../../components/footer/Footer";
 
 function List() {
 
@@ -160,6 +162,10 @@ function List() {
                         }
                     </div>
                 </div>
+            </div>
+            <div className="mailFooter">
+                <MailList />
+                <Footer />
             </div>
         </div>
     );

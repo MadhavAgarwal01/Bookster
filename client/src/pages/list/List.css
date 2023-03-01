@@ -82,13 +82,22 @@
     width: 100%;
     font-weight: 500;
     cursor: pointer;
-    font-size: 1rem
+    font-size: 1rem;
+    border-radius: 0.5rem;
 }
 
 .listResult{
     flex: 3;
 }
 
+
+.mailFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .html{
     font-size: 62.5%;
   }
+
