@@ -51,6 +51,6 @@ A full-stack hotel booking responsive website with session and state management.
 
 - Responsive Design
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_5.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_5.jpg)
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_6.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_6.jpg)
