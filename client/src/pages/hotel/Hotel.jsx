@@ -12,9 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch";
+import { parseISO } from "date-fns"
 import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "../../context/SearchContext";
-import { parseWithOptions } from "date-fns/fp";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 
@@ -30,7 +29,14 @@ const Hotel = () => {
 
     const { data, loading, error, reFetch } = useFetch(`/hotels/find/${id}`);
     const { user, dispatch } = useContext(AuthContext);
-    const { date, options } = useContext(SearchContext);
+
+    var storedState = JSON.parse(localStorage.getItem("state"));
+    console.log("storedState date: ", storedState.date[0]);
+    const options = storedState.options;
+    const date = [{
+        startDate: parseISO(storedState.date[0].startDate),
+        endDate: parseISO(storedState.date[0].endDate)
+    }];
 
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
     function dayDifference(date1, date2) {

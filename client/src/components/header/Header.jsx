@@ -25,6 +25,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useEffect } from "react";
 
 function Header({ type }) {
+
     const [destination, setDestination] = useState("");
     const [openDate, setOpenDate] = useState(false);
     const [date, setDate] = useState([

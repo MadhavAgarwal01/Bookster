@@ -12,6 +12,7 @@ import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns"
+import { parseISO } from "date-fns"
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
@@ -19,23 +20,35 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 
-function List() {
+const List = () => {
 
-    const { dispatch, ...others } = useContext(SearchContext);
-    const con_destination = others.destination;
-    const con_options = others.options;
-    const con_date = others.date;
-    const con_type = others.type;
+    const { dispatch } = useContext(SearchContext);
+    var storedState = JSON.parse(localStorage.getItem("state"));
+
+    const con_destination = storedState.destination;
+    const con_options = storedState.options;
+    const con_date = [{
+        startDate: parseISO(storedState.date[0].startDate),
+        endDate: parseISO(storedState.date[0].endDate)
+    }];
+    const con_type = storedState.type;
+    console.log("storedState: ", storedState);
+
+    const navigationType = window.performance.getEntriesByType('navigation')[0].type;
     React.useEffect(() => {
-        console.log("List effect!", con_date);
-    }, [{ con_date }]);
+        console.log("Type: ", navigationType);
+        if (navigationType === "reload") {
+            // dispatch({ type: "INITIAL_STATE" });
+            console.log("Reloaded: ", { con_destination, con_date, con_type, con_options });
+            reFetch();
+        }
+    }, [navigationType]);
 
     const [destination, setDestination] = useState(con_destination);
     const [options, setOptions] = useState(con_options);
     const [date, setDate] = useState(con_date);
     const typeArray = ["hotel", "apartments", "resorts", "villas", "cabin"];
     const typeIndex = Math.max(0, typeArray.findIndex((element) => element === con_type));
-
     const types = [
         { value: "hotel", label: "hotel" },
         { value: "apartments", label: "apartments" },
@@ -43,17 +56,13 @@ function List() {
         { value: "villas", label: "villas" },
         { value: "cabin", label: "cabin" }];
     const [selectedOption, setSelectedOption] = useState(types[typeIndex]);
-    const type = selectedOption.value;
-
-    React.useEffect(() => {
-        console.log("Type effect!", selectedOption);
-    }, [selectedOption]);
+    var type = selectedOption.value;
 
     const [openDate, setOpenDate] = useState(false);
     const [min, setMin] = useState(undefined);
     const [max, setMax] = useState(undefined);
 
-    const { data, loading, reFetch } = useFetch(
+    var { data, loading, reFetch } = useFetch(
         `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}&type=${type}`
     );
 
