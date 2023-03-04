@@ -34,6 +34,10 @@ function Header({ type }) {
             key: "selection",
         },
     ]);
+    React.useEffect(() => {
+        console.log("Effect date:", date);
+    }, [date]);
+
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
@@ -51,10 +55,15 @@ function Header({ type }) {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const { dispatch } = useContext(SearchContext);
+    React.useEffect(() => {
+        dispatch({ type: "RESET_SEARCH" });
+        // dispatch({ type: "NEW_SEARCH", payload: { destination, date, options, type: undefined } });
+        console.log("RESET REQ SENT!");
+    }, []);
 
     const handleSearch = async () => {
         console.log({ destination, date, options });
-        await dispatch({ type: "NEW_SEARCH", payload: { destination, date, options } });
+        await dispatch({ type: "NEW_SEARCH", payload: { destination, date, options, type: undefined } });
         navigate("/hotels")
     };
 
@@ -125,7 +134,10 @@ function Header({ type }) {
                                 </span>
                                 {openDate && <DateRange
                                     editableDateInputs={true}
-                                    onChange={(item) => setDate([item.selection])}
+                                    onChange={(item) => {
+                                        setDate([item.selection]);
+                                        // console.log("Set date:", date);
+                                    }}
                                     moveRangeOnFirstSelection={false}
                                     ranges={date}
                                     minDate={new Date()}

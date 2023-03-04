@@ -30,7 +30,7 @@ export const login = async (req, res, next) => {
         const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);
         res.cookie("access_token", token, { httpOnly: true })
             .status(200)
-            .json({ details: { ...otherDetails }, isAdmin });
+            .json({ details: { ...otherDetails }, isAdmin: isAdmin });
 
     } catch (err) {
         next(err);

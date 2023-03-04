@@ -12,13 +12,6 @@ import React, { useContext } from "react";
 
 const Home = () => {
 
-    // const { dispatch, ...others } = useContext(SearchContext);
-    // dispatch({ type: "RESET_SEARCH" });
-
-    // React.useEffect(() => {
-    //     console.log("Home page:", others)
-    // }, [others]);
-
     return (
         <div>
             <Navbar />

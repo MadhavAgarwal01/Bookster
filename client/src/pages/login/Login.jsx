@@ -23,6 +23,7 @@ const Login = () => {
         try {
             const res = await axios.post("/auth/login", credentials);
             dispatch({ type: "LOGIN_SUCCESS", payload: { data: res.data.details, redirectTo: redirectTo } });
+
             console.log("I want to naviagte to: ", redirectTo);
             navigate(redirectTo)
         } catch (err) {

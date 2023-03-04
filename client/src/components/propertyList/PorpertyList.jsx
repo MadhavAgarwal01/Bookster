@@ -24,9 +24,9 @@ const PropertyList = () => {
     navigate("/hotels");
   };
 
-  React.useEffect(() => {
-    console.log("PropertyList Context:", others);
-  }, [others]);
+  // React.useEffect(() => {
+  //   console.log("PropertyList Context:", others);
+  // }, [others]);
 
   return (
     loading ?

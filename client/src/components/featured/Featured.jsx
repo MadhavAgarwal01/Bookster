@@ -18,9 +18,9 @@ function Featured() {
         navigate("/hotels");
     };
 
-    React.useEffect(() => {
-        console.log("Featured Context:", others);
-    }, [others]);
+    // React.useEffect(() => {
+    //     console.log("Featured Context:", others);
+    // }, [others]);
 
     return (loading ? "Loading Please wait" :
         <div className="featured">
