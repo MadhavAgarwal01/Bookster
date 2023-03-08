@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import Countdown from "react-countdown";
 import "./Register.css";
@@ -32,19 +32,6 @@ const Register = () => {
             console.log("Register RedirectTo: ", redirectTo);
             setStatus(true);
 
-            // DIRECT LOGIN
-            // dispatch({
-            //     type: "LOGIN_SUCCESS", payload: {
-            //         data: {
-            //             username: credentials.username,
-            //             password: credentials.password
-            //         },
-            //         redirectTo: redirectTo
-            //     }
-            // });
-
-            // navigate(redirectTo)
-
         } catch (err) {
             dispatch({ type: "REGISTER_FAILURE", payload: err });
             console.log("Reloading in 3 secs")
@@ -56,7 +43,9 @@ const Register = () => {
         <div className="register">
             <div className="rContainer">
                 <div className="registerPage">
-                    <h1>Bookster</h1>
+                    <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+                        <h1 >Bookster</h1>
+                    </Link>
                 </div>
                 <div className="registerItem">
                     <span>Username : </span>
@@ -124,13 +113,13 @@ const Register = () => {
                 <div className="loginLink" onClick={() => { navigate("/login") }}>{status ? "Account created successfully! " : "Existing user? "} <span> Login here</span></div>
                 {error ?
                     <div className="errorBlock">
-                        <span>{error?.response?.data?.message}</span>
+                        <span>{error?.response?.data?.message} | </span>
                         <Countdown
-                            date={Date.now() + 3000}
+                            date={Date.now() + 5000}
                             intervalDelay={0}
                             precision={0.1}
                             renderer={props => <div>Reloading in..... {props.seconds}s</div>}
-                        // onComplete={() => { window.location.reload(true) }}
+                            onComplete={() => { window.location.reload(true) }}
                         />
                     </div>
                     : <span>&nbsp;</span>}

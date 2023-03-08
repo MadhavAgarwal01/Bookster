@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import Countdown from "react-countdown";
 import "./Login.css";
@@ -41,7 +41,9 @@ const Login = () => {
         <div className="login">
             <div className="lContainer">
                 <div className="loginPage">
-                    <h1>Bookster</h1>
+                    <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+                        <h1 >Bookster</h1>
+                    </Link>
                 </div>
                 <input
                     type="text"
@@ -63,9 +65,9 @@ const Login = () => {
                 <div className="registerLink" onClick={() => { navigate("/register") }}>New user? <span>Register here</span></div>
                 {error ?
                     <div className="errorBlock">
-                        <span>{error?.response?.data?.message}</span>
+                        <span>{error?.response?.data?.message} | </span>
                         <Countdown
-                            date={Date.now() + 3000}
+                            date={Date.now() + 5000}
                             intervalDelay={0}
                             precision={0.1}
                             renderer={props => <div>Reloading in..... {props.seconds}s</div>}

@@ -2,14 +2,17 @@ import "./Navbar.css"
 import "./Navbar_res.css"
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faCoffee } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 function Navbar() {
 
     const { user, loading, error, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    // console.log(location)
+    const [menu, setMenu] = useState(false);
 
     const logoutBtn = async () => {
         dispatch({ type: "LOGOUT" });
@@ -32,6 +35,16 @@ function Navbar() {
         }
     }
 
+    const handleDelete = async () => {
+        try {
+            const res = await axios.delete(`/users/${user._id}`);
+            dispatch({ type: "LOGOUT" });
+            // console.log("Delete Res: ", res);
+        } catch (error) {
+            console.log("Error: ", error);
+        }
+    }
+
     return (
         <div className="navbar">
             <div className="navContainer">
@@ -39,9 +52,13 @@ function Navbar() {
                     <h2 className="logo">Bookster</h2>
                 </Link>
                 {user ?
-                    <div className="loggedIn">
+                    <div className="navItems">
                         <span className="userName">Welcome {user.username}!</span>
-                        <button onClick={logoutBtn} className="navButton">Logout</button>
+                        <FontAwesomeIcon className="faIcon" icon={faBars} onClick={() => { setMenu(!menu) }} />
+                        {menu && <div className="verifiedOptions">
+                            <button onClick={logoutBtn} className="optionButton">Logout</button>
+                            <button onClick={handleDelete} className="optionButton">Delete Account</button>
+                        </div>}
                     </div>
                     :
                     <div className="navItems">

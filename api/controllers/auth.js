@@ -14,7 +14,12 @@ export const register = async (req, res, next) => {
         await newUser.save();
         res.status(200).send("Account has been created!");
     } catch (err) {
-        next(err);
+        console.log("Register Error: ", err.message)
+        if (err.message.includes("User validation failed")) {
+            return next(createError(400, "Incomplete information provided"));
+        } else {
+            next(err);
+        }
     }
 };
 
