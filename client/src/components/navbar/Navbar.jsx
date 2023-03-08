@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCoffee } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
-function Navbar() {
+const Navbar = (props) => {
 
     const { user, loading, error, dispatch } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -15,6 +15,8 @@ function Navbar() {
     const [menu, setMenu] = useState(false);
 
     const logoutBtn = async () => {
+        console.log("User : ", user);
+        if (props.type === "userPage") navigate("/");
         dispatch({ type: "LOGOUT" });
     }
 
@@ -35,16 +37,6 @@ function Navbar() {
         }
     }
 
-    const handleDelete = async () => {
-        try {
-            const res = await axios.delete(`/users/${user._id}`);
-            dispatch({ type: "LOGOUT" });
-            // console.log("Delete Res: ", res);
-        } catch (error) {
-            console.log("Error: ", error);
-        }
-    }
-
     return (
         <div className="navbar">
             <div className="navContainer">
@@ -57,7 +49,7 @@ function Navbar() {
                         <FontAwesomeIcon className="faIcon" icon={faBars} onClick={() => { setMenu(!menu) }} />
                         {menu && <div className="verifiedOptions">
                             <button onClick={logoutBtn} className="optionButton">Logout</button>
-                            <button onClick={handleDelete} className="optionButton">Delete Account</button>
+                            <button onClick={() => { navigate("/account") }} className="optionButton">Account</button>
                         </div>}
                     </div>
                     :

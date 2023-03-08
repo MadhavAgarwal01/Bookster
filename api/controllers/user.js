@@ -6,7 +6,7 @@ export const updateUser = async (req, res, next) => {
             req.params.id,
             { $set: req.body },
             { new: true });
-        res.status(200).json(updatedUser);
+        res.status(200).json("Details updated Successfully!");
     } catch (err) {
         next(err);
     }

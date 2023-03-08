@@ -1,0 +1,113 @@
+.UserHome{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fakeHeader{
+  background-color: #003580;
+  height: 2rem;
+  border-bottom: 0.2rem solid #febb02;
+}
+
+.userHomeContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 64rem;
+  background-color: #F6F4F2;
+  padding: 1rem;
+  }
+
+.userOptions{
+  flex:1;
+  padding: 2rem;
+  border-right: 0.2rem solid #003580;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #003580;
+}
+
+.tabOption{
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+  background-color: #0071c2;
+  border-radius: 0.3rem;
+}
+
+.tabOption.active{
+  border: 0.2rem solid #febb02;
+  border-radius: 0.3rem;
+}
+
+.tabOption:hover{
+  border: 0.2rem solid white;
+  border-radius: 0.3rem;
+}
+
+.tabHeading{
+  margin-bottom: 1rem;
+}
+
+.tabsContainer{
+  flex:4;
+  padding: 2rem;
+}
+
+.updateDetailsTab{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.UserHomeItem{
+  display: flex;
+  justify-content: space-between;
+  width: 35rem;
+}
+
+.UserHomeItem>span{
+  padding-top: 1rem;
+}
+  
+.deleteAccountTab{
+    display: flex;
+    flex-direction: column;
+}
+
+.userButton{
+  border: none;
+  padding: 0.5rem 2rem;
+  width: 12rem;
+  cursor: pointer;
+  color: white;
+  background-color: #0071c2;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.userButton:disabled{
+  background-color: #555;
+}
+
+.successUpdate{
+  color: green;
+  font-weight: 500;
+}
+
+.btns{
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.intentionalDelete{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}

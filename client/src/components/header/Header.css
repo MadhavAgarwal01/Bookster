@@ -5,6 +5,7 @@
     justify-content: center;
     position: relative;
     z-index: 2;
+    border-bottom: 0.2rem solid #febb02;
   }
   
   .headerContainer {
@@ -12,7 +13,7 @@
     max-width: 64rem;
     margin: 1rem 1rem 8rem 1rem;
   }
-
+  
   .headerContainer.listMode{
     margin: 1rem 1rem 1rem 1rem;
   }
