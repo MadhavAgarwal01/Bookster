@@ -18,7 +18,7 @@ const AuthReducer = (state, action) => {
                 user: null,
                 loading: true,
                 error: null,
-                redirectTo: null
+                redirectTo: "/"
             };
         case "LOGIN_SUCCESS":
             return {
@@ -47,6 +47,13 @@ const AuthReducer = (state, action) => {
                 loading: false,
                 error: null,
                 redirectTo: action.payload
+            };
+        case "REGISTER_FAILURE":
+            return {
+                user: null,
+                loading: false,
+                error: action.payload,
+                redirectTo: "/register"
             };
         default:
             return state;

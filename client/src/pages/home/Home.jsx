@@ -12,29 +12,35 @@ import React, { useContext } from "react";
 
 const Home = () => {
 
-    return (
-        <div>
-            <Navbar />
-            <Header />
-            <div className="homeContainer">
-                <Featured />
+    try {
+        return (
+            <div>
+                <Navbar />
+                <Header />
+                <div className="homeContainer">
+                    <Featured />
 
-                <div className="homeItem" id="firstItem">
-                    <h1 className="homeTitle">Browse by property</h1>
-                    <PropertyList />
+                    <div className="homeItem" id="firstItem">
+                        <h1 className="homeTitle">Browse by property</h1>
+                        <PropertyList />
+                    </div>
+
+                    <div className="homeItem">
+                        <h1 className="homeTitle">Homes guests love</h1>
+                        <FeaturedProperties />
+                    </div>
                 </div>
-
-                <div className="homeItem">
-                    <h1 className="homeTitle">Homes guests love</h1>
-                    <FeaturedProperties />
+                <div className="mailFooter">
+                    <MailList />
+                    <Footer />
                 </div>
             </div>
-            <div className="mailFooter">
-                <MailList />
-                <Footer />
-            </div>
-        </div>
-    );
+        )
+
+    } catch (err) {
+        console.log(err);
+    }
 }
+
 
 export default Home;

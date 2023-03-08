@@ -12,7 +12,7 @@ export const register = async (req, res, next) => {
             password: hash,
         });
         await newUser.save();
-        res.status(200).send("User has been created!");
+        res.status(200).send("Account has been created!");
     } catch (err) {
         next(err);
     }
@@ -24,7 +24,7 @@ export const login = async (req, res, next) => {
         if (!user) return next(createError(404, "User not found"));
 
         const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password);
-        if (!isPasswordCorrect) return next(createError(400, "Wrong password or username!"));
+        if (!isPasswordCorrect) return next(createError(400, "Wrong password!"));
 
         const { password, isAdmin, ...otherDetails } = user._doc;
         const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT);

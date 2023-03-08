@@ -49,13 +49,13 @@ export const SearchContextProvider = ({ children }) => {
         var storedState = JSON.parse(localStorage.getItem("state"));
 
         INITIAL_STATE = {
-            destination: storedState.destination || RESET_STATE.destination,
+            destination: storedState?.destination || RESET_STATE.destination,
             date: [{
-                startDate: parseISO(storedState.date[0].startDate) || RESET_STATE.date[0].startDate,
-                endDate: parseISO(storedState.date[0].endDate) || RESET_STATE.date[0].endDate
+                startDate: parseISO(storedState?.date[0].startDate) || RESET_STATE.date[0].startDate,
+                endDate: parseISO(storedState?.date[0].endDate) || RESET_STATE.date[0].endDate
             }],
-            type: storedState.type || RESET_STATE.type,
-            options: storedState.options || RESET_STATE.options
+            type: storedState?.type || RESET_STATE.type,
+            options: storedState?.options || RESET_STATE.options
         };
     })
     console.log("INITIAL_STATE: ", INITIAL_STATE);

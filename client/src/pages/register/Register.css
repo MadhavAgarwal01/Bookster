@@ -1,11 +1,11 @@
-.login {
+.register {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  .lContainer {
+  .rContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -16,30 +16,42 @@
     align-items: center;
     color: white;
   }
-  
-  .loginPage{
-    color: white;
-    margin-bottom: 3rem;
+
+  .registerItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  .registerLink{
+  .registerItem>span{
+    padding: 1rem;
+  }
+  
+  .loginLink{
     margin-bottom: 1rem;
   }
 
-  .registerLink>span:hover{
+  .loginLink>span:hover{
     text-decoration: underline;
     cursor: pointer;
   }
 
-  .lInput{
-    height: 1.5rem;
+
+  .registerPage{
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  .rInput{
+    height: 1rem;
     width: 16rem;
     padding: 1rem;
     border-radius: 0.3rem;
   }
   
-  .lButton {
-    width: 18rem;
+  .rButton {
+    width: 25rem;
     border: none;
     padding: 1rem 2rem;
     background-color: #0071c2;
@@ -49,9 +61,10 @@
     border-radius: 0.3rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    margin-left: 0.5rem;
   }
   
-  .lButton:disabled{
+  .rButton:disabled{
     background-color: #0071c28c;
     cursor: not-allowed;
   }

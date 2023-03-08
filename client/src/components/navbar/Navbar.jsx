@@ -23,6 +23,14 @@ function Navbar() {
             console.log(err);
         }
     }
+    const registerBtn = async () => {
+        try {
+            dispatch({ type: "CUR_LOC", payload: location.pathname });
+            navigate("/register")
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <div className="navbar">
@@ -37,7 +45,7 @@ function Navbar() {
                     </div>
                     :
                     <div className="navItems">
-                        <button onClick={() => { navigate("/register") }} className="navButton">Register</button>
+                        <button onClick={registerBtn} className="navButton">Register</button>
                         <button onClick={loginBtn} className="navButton">Login</button>
                     </div>}
             </div>
