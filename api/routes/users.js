@@ -3,10 +3,10 @@ import { deleteUser, getAllUsers, getUser, updateUser } from "../controllers/use
 import { verifyAdmin, verifyToken, verifyUser } from "../utils/verifyToken.js";
 const router = express.Router();
 
-// router.get("/checkauthentication", verifyToken, (req, res, next) => {
-//     console.log("hello user, you are logged in")
-//     res.send("hello user, you are logged in")
-// })
+router.get("/checkauthentication", verifyToken, (req, res, next) => {
+    console.log("hello user, you are logged in")
+    res.send("hello user, you are logged in")
+})
 
 // router.get("/checkuser/:id", verifyUser, (req, res, next) => {
 //     console.log("Hello User, you are logged in and you can delete your account");

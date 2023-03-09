@@ -48,10 +48,10 @@ export const getAllHotels = async (req, res, next) => {
     };
 
     if (city === undefined || city === "") {
-        console.log("Query without city:", query);
+        // console.log("Query without city:", query);
     } else {
         query['city'] = city;
-        console.log("Query : ", query);
+        // console.log("Query : ", query);
     }
 
     try {

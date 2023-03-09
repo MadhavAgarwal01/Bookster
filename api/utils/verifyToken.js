@@ -23,6 +23,8 @@ export const verifyUser = (req, res, next) => {
     verifyToken(req, res, () => {
 
         console.log("VerifyUser Callback function called!")
+        console.log("verifyUser req.user : ", req.user)
+        console.log("verifyUser req.params : ", req.params)
 
         if (req.user.id === req.params.id || req.user.isAdmin) {
             console.log("User verified!");
