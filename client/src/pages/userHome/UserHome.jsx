@@ -65,70 +65,73 @@ const UserHome = () => {
                             <div onClick={() => { setTab(1); setStatus(false) }} className="tabOption">Delete Account</div>
                         </div>
                         <div className="tabsContainer">
-                            {tab === 0 && <div className="updateDetailsTab">
-                                <h2>Update Details</h2>
-                                <div className="UserHomeItem">
-                                    <span>Username : </span>
-                                    <input
-                                        type="text"
-                                        placeholder={data.username}
-                                        id="username"
-                                        onChange={handleChange}
-                                        className="rInput"
-                                    />
+                            {tab === 0 && <form onSubmit={updateDetals}>
+                                <div className="updateDetailsTab">
+                                    <h2>Update Details</h2>
+                                    <div className="UserHomeItem">
+                                        <span>Username : </span>
+                                        <input
+                                            type="text"
+                                            placeholder={data.username}
+                                            id="username"
+                                            onChange={handleChange}
+                                            className="rInput"
+                                        />
+                                    </div>
+                                    <div className="UserHomeItem">
+                                        <span>Phone : </span>
+                                        <input
+                                            type="number"
+                                            placeholder={data.phone}
+                                            id="phone"
+                                            onChange={handleChange}
+                                            className="rInput"
+                                        />
+                                    </div>
+                                    <div className="UserHomeItem">
+                                        <span>Email : </span>
+                                        <input
+                                            type="email"
+                                            placeholder={data.email}
+                                            id="email"
+                                            onChange={handleChange}
+                                            className="rInput"
+                                        />
+                                    </div>
+                                    <div className="UserHomeItem">
+                                        <span>City : </span>
+                                        <input
+                                            type="text"
+                                            placeholder={data.city}
+                                            id="city"
+                                            onChange={handleChange}
+                                            className="rInput"
+                                        />
+                                    </div>
+                                    <div className="UserHomeItem">
+                                        <span>Country : </span>
+                                        <input
+                                            type="text"
+                                            placeholder={data.country}
+                                            id="country"
+                                            onChange={handleChange}
+                                            className="rInput"
+                                        />
+                                    </div>
+                                    <div className="btns">
+                                        <button disabled={loading}
+                                            onClick={() => { window.location.reload(true) }}
+                                            className="userButton">
+                                            RESET
+                                        </button>
+                                        <button disabled={loading} onSubmit={updateDetals} className="userButton">
+                                            UPDATE DETAILS
+                                        </button>
+                                    </div>
+                                    {status && <span className="successUpdate"><FontAwesomeIcon icon={faCheckCircle} /> Details updated sucessfully</span>}
                                 </div>
-                                <div className="UserHomeItem">
-                                    <span>Phone : </span>
-                                    <input
-                                        type="number"
-                                        placeholder={data.phone}
-                                        id="phone"
-                                        onChange={handleChange}
-                                        className="rInput"
-                                    />
-                                </div>
-                                <div className="UserHomeItem">
-                                    <span>Email : </span>
-                                    <input
-                                        type="email"
-                                        placeholder={data.email}
-                                        id="email"
-                                        onChange={handleChange}
-                                        className="rInput"
-                                    />
-                                </div>
-                                <div className="UserHomeItem">
-                                    <span>City : </span>
-                                    <input
-                                        type="text"
-                                        placeholder={data.city}
-                                        id="city"
-                                        onChange={handleChange}
-                                        className="rInput"
-                                    />
-                                </div>
-                                <div className="UserHomeItem">
-                                    <span>Country : </span>
-                                    <input
-                                        type="text"
-                                        placeholder={data.country}
-                                        id="country"
-                                        onChange={handleChange}
-                                        className="rInput"
-                                    />
-                                </div>
-                                <div className="btns">
-                                    <button disabled={loading}
-                                        onClick={() => { window.location.reload(true) }}
-                                        className="userButton">
-                                        RESET
-                                    </button>
-                                    <button disabled={loading} onClick={updateDetals} className="userButton">
-                                        UPDATE DETAILS
-                                    </button>
-                                </div>
-                                {status && <span className="successUpdate"><FontAwesomeIcon icon={faCheckCircle} /> Details updated sucessfully</span>}
-                            </div>}
+                            </form>
+                            }
                             {tab === 1 && <div className="deleteAccountTab">
                                 <h2>Permanently delete your account</h2>
                                 <div className="intentionalDelete">
@@ -147,7 +150,7 @@ const UserHome = () => {
                     <MailList />
                     <Footer />
                 </div>
-            </div>
+            </div >
         );
     } catch (err) {
         console.log(err)

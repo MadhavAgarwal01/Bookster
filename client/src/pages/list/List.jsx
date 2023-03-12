@@ -105,7 +105,7 @@ const List = () => {
                                             editableDateInputs={true}
                                             onChange={(item) => setDate([item.selection])}
                                             moveRangeOnFirstSelection={false}
-                                            ranges={date}
+                                            ranges={[{ ...date[0], key: 'selection' }]}
                                             minDate={new Date()}
                                         />}
                                 </div>

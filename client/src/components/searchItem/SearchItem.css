@@ -1,13 +1,13 @@
 .searchItem{
     border: 0.1rem solid lightgray;
-    min-height: 15rem;
+    min-height: 14rem;
     padding: 1rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
     gap: 2rem; 
     margin-bottom: 1.2rem;
-    width: fit-content;
+    min-width: fit-content;
 }   
 
 .imgFeatures{
@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    margin-top: 3.4rem;
 }
 
 .siCancelOp{
@@ -48,6 +47,13 @@
     flex-direction: column;
     gap: 0.6rem;
     flex: 2;
+    justify-content: space-between;
+}
+
+.hotelPerks{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
 .siTitle{
@@ -122,6 +128,17 @@
     flex-direction: column;
 }
 
+.costCard{
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: right;
+}
+
+.costCard>p{
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+}
+
 .siPrice{
     font-size: 1.5rem;
 }
@@ -135,12 +152,13 @@
     background-color: #0071c2;
     color: white;
     font-weight: bold;
-    padding: 1rem 0.5rem;
+    padding: 0.8rem 1rem;
     border: none;
     cursor: pointer;
     border-radius: 0.5rem;
+    margin-top: 0.3rem;
 }
 
 .html{
     font-size: 62.5%;
-  }
+}

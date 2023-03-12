@@ -6,7 +6,7 @@ import createError from "../utils/error.js";
 export const createBooking = async (req, res, next) => {
     const newbooking = new Booking(req.body);
     const selectedRooms = newbooking.roomId;
-    // console.log("Request: ", req)
+    console.log("Request: ", req.data)
 
     try {
         const savedBooking = await newbooking.save();
@@ -24,8 +24,12 @@ export const createBooking = async (req, res, next) => {
         res.status(200).json("Booking Successfull");
 
     } catch (err) {
-        console.log("Booking err: ", err);
-        next(err);
+        console.log("Booking err: ", err.message);
+        if (err.message.includes("MongoServerError: E11000 duplicate key error collection")) {
+            return next(createError(500, "Duplicate mongoDB keys in database"));
+        } else {
+            next(err);
+        }
     }
 };
 

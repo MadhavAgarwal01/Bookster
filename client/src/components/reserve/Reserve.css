@@ -1,83 +1,101 @@
 .reserve {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.418);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-  }
-  
-  .rContainer {
-    background-color: white;
-    padding: 20px;
-    position: relative;
-  }
-  
-  .rClose {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-  }
-  
-  .rItem {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 20px;
-  }
-  
-  .rItemInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 2;
-  }
-  
-  .rTitle {
-    font-weight: 500;
-  }
-  
-  .rDesc {
-    font-weight: 300;
-  }
-  
-  .rMax {
-    font-size: 12px;
-  }
-  
-  .rPrice {
-    font-weight: 500;
-  }
-  
-  .rSelectRooms{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    font-size: 8px;
-    color: gray;
-    flex: 1;
-    justify-content: center;
-  }
-  
-  .room{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .rButton {
-    border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 20px;
-  }
+  width: 100vw;
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.roomContainer {
+  padding: 1rem;
+  position: relative;
+  background-color: #F6F4F2;
+  color: black;
+  border-radius: 0.5rem;
+}
+
+.rClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.roomDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bookBTN{
+  display: flex;
+  justify-content: center;
+}
+
+.rHeading{
+  display: flex;
+  justify-content: center;
+}
+
+.rItem {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.rItemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 2;
+}
+
+.rTitle {
+  font-weight: 500;
+}
+
+.rDesc {
+  font-weight: 300;
+}
+
+.rMax {
+  font-size: 1rem;
+}
+
+.rPrice {
+  font-weight: 500;
+}
+
+.rSelectRooms{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.5rem;
+  color: gray;
+  flex: 1;
+  justify-content: center;
+}
+
+.room{
+  display: flex;
+  flex-direction: column;
+}
+
+.resButton {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}

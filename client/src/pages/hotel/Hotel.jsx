@@ -145,7 +145,7 @@ const Hotel = () => {
                                 <button onClick={handleClick}>Reserve or Book Now!</button>
                             </div>
                         </div>
-                        {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}
+                        {openModal && <Reserve setOpen={setOpenModal} hotelData={data} date={date} />}
                     </div>
                     <MailList />
                     <Footer />

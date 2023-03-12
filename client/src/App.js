@@ -11,6 +11,7 @@ import Hotel from './pages/hotel/Hotel';
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import UserHome from "./pages/userHome/UserHome";
+import Payment from "./pages/payment/Payment";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<UserHome />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </BrowserRouter>
   );

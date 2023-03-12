@@ -13,12 +13,14 @@ function SearchItem({ item }) {
                 <span className="siFeatures">{item.desc}</span>
             </div>
             <div className="siDesc">
-                <h1 className="siTitle">{item.name}</h1>
-                <span className="siDistance">{item.distance}m from center</span>
-                <span className="siTaxiOp">Free airport taxi</span>
-                <span className="siSubtitle">
-                    Studio Apartment with Air conditioning
-                </span>
+                <div className="hotelPerks">
+                    <h1 className="siTitle">{item.name}</h1>
+                    <span className="siDistance">{item.distance}m from center</span>
+                    <span className="siTaxiOp">Free airport taxi</span>
+                    <span className="siSubtitle">
+                        Studio Apartment with Air conditioning
+                    </span>
+                </div>
                 <div className="cancelPolicy">
                     <span className="siCancelOp">Free cancellation </span>
                     <span className="siCancelOpSubtitle">
@@ -27,16 +29,18 @@ function SearchItem({ item }) {
                 </div>
             </div>
             <div className="siDetails">
-                {item.rating && <div className="siRating">
+                {item.rating || <div className="siRating">
                     <div className="ratingReviews">
                         <span>Excellent</span>
                         <p>66 reviews</p>
                     </div>
-                    <button>{item.rating}</button>
+                    <button>{item.rating || 9.6}</button>
                 </div>}
                 <div className="siDetailTexts">
-                    <span className="siPrice">${item.cheapestPrice}</span>
-                    <span className="siTaxOp">Includes taxes and fees</span>
+                    <div className="costCard">
+                        <span className="siPrice">${item.cheapestPrice}</span><p>&nbsp;/night</p>
+                    </div>
+                    <span className="siTaxOp">Includes taxes & fees</span>
                     <Link to={`/hotels/${item._id}`}>
                         <button className="siCheckButton">See availability</button>
                     </Link>

@@ -75,6 +75,8 @@ function Header({ type }) {
         document.getElementById("attractions").classList.remove("active");
         document.getElementById("airport_taxis").classList.remove("active");
         event.currentTarget.classList.add('active');
+        console.log(event.currentTarget.id)
+        if (event.currentTarget.id === "stays") navigate("/");
     };
     const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
     const [openHeaderList, setOpenHeaderList] = useState(false);
@@ -137,7 +139,7 @@ function Header({ type }) {
                                     editableDateInputs={true}
                                     onChange={(item) => {
                                         setDate([item.selection]);
-                                        // console.log("Set date:", date);
+                                        console.log("sel:", item.selection);
                                     }}
                                     moveRangeOnFirstSelection={false}
                                     ranges={date}
