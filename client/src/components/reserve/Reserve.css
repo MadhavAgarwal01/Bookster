@@ -1,19 +1,24 @@
 .reserve {
-  width: 100vw;
-  position: fixed;
-  top: 5vh;
+  top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   z-index: 3;
+  background-color: rgba(0, 0, 0, 0.613);
 }
 
 .roomContainer {
+  height: 80%;
   padding: 1rem;
+  border-radius: 0.5rem;
   position: relative;
   background-color: #F6F4F2;
   color: black;
-  border-radius: 0.5rem;
 }
 
 .rClose {
