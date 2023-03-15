@@ -16,6 +16,7 @@ import { parseISO } from "date-fns"
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
+import { useEffect } from "react";
 
 const Hotel = () => {
     const location = useLocation().pathname;
@@ -33,10 +34,10 @@ const Hotel = () => {
     var storedState = JSON.parse(localStorage.getItem("state"));
     console.log("storedState date: ", storedState.date[0]);
     const options = storedState.options;
-    const date = [{
+    const [date, setDate] = useState([{
         startDate: parseISO(storedState.date[0].startDate),
         endDate: parseISO(storedState.date[0].endDate)
-    }];
+    }]);
 
     const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
     function dayDifference(date1, date2) {
@@ -45,7 +46,7 @@ const Hotel = () => {
         return diffDays;
     }
     const days = dayDifference(date[0].endDate, date[0].startDate);
-    console.log(days);
+    console.log("hotel date: ", date);
 
     const handleOpen = (i) => {
         setSlideNumber(i);
@@ -145,7 +146,7 @@ const Hotel = () => {
                                 <button onClick={handleClick}>Reserve or Book Now!</button>
                             </div>
                         </div>
-                        {openModal && <Reserve setOpen={setOpenModal} hotelData={data} date={date} />}
+                        {openModal && <Reserve setOpen={setOpenModal} hotelData={data} con_date={date} />}
                     </div>
                     <MailList />
                     <Footer />

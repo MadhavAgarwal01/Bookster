@@ -50,6 +50,7 @@ const Navbar = (props) => {
                         {menu && <div className="verifiedOptions">
                             <button onClick={logoutBtn} className="optionButton">Logout</button>
                             <button onClick={() => { navigate("/account") }} className="optionButton">Account</button>
+                            <button onClick={() => { navigate("/bookings") }} className="optionButton">My Bookings</button>
                         </div>}
                     </div>
                     :

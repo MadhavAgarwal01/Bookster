@@ -7,15 +7,22 @@ import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { DateRange } from "react-date-range";
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { format } from "date-fns"
 
-const Reserve = ({ setOpen, hotelData, date }) => {
+const Reserve = ({ setOpen, hotelData, con_date }) => {
 
+    console.log("con_date: ", con_date)
     const hotelId = hotelData._id;
     const navigate = useNavigate();
     var { user } = useContext(AuthContext);
 
     const [selectedRooms, setSelectedRooms] = useState([]);
     const { data, loading, error } = useFetch(`/hotels/rooms/${hotelId}`);
+    const [date, setDate] = useState(con_date);
+    const [openDate, setOpenDate] = useState(false);
 
     const getDateInRange = (startDate, endDate) => {
         const start = new Date(startDate);
@@ -53,23 +60,11 @@ const Reserve = ({ setOpen, hotelData, date }) => {
 
     const handleClick = async () => {
         try {
-            // await Promise.all(
-            //     selectedRooms.map((roomId) => {
+            // console.log("selectedRooms.length : ", selectedRooms.length)
+            if (selectedRooms.length < 1) return;
 
-            //         console.log("All date:", alldate);
-            //         console.log("room ID: ", roomId);
-            //         console.log("user ID: ", user._id);
-
-            //         const res = axios.put(`/rooms/availability/${roomId}`, {
-            //             date: alldate,
-            //         });
-            //         console.log("Selected!", res.data);
-            //         return res.data;
-            //     })
-            // );
-
-            navigate("/payment", { state: { selectedRooms, date, hotelData } });
             setOpen(false);
+            navigate("/payment", { state: { selectedRooms, date, hotelData } });
 
         } catch (err) {
             console.log(err);
@@ -84,9 +79,25 @@ const Reserve = ({ setOpen, hotelData, date }) => {
                     onClick={() => setOpen(false)}
                 />
                 <div className="roomDetails">
-                    <div className="rHeading">
-                        <span>Select your rooms:</span>
+
+                    <div className="editDates">
+                        <div className="rHeading">
+                            <span>Check-in - Check-out:</span>
+                        </div>
+                        <span onClick={() => { setOpenDate(!openDate) }}>
+                            {`${format(date[0].startDate, "dd/MM/yyy")} to ${format(date[0].endDate, "dd/MM/yyy")}`}
+                        </span>
+                        {openDate &&
+                            <DateRange
+                                editableDateInputs={true}
+                                onChange={(item) => setDate([item.selection])}
+                                moveRangeOnFirstSelection={false}
+                                ranges={[{ ...date[0], key: 'selection' }]}
+                                minDate={new Date()}
+                                className="reserveDates"
+                            />}
                     </div>
+
                     {data.map((item) => (
                         <div className="rItem" key={item._id} >
                             <div className="rItemInfo">

@@ -52,7 +52,11 @@
   font-size: 1.2rem;
 }
 
-.successUpdate{
+.checkoutButton:disabled{
+  background-color: #555;
+}
+
+.bookSuccessUpdate{
   color: white;
   margin-top: 1rem;
 }
@@ -248,12 +252,13 @@
   justify-content: space-between;
 }
 
-.editDate{
+.optionsWhite{
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .bookIcon{

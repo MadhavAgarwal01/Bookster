@@ -28,7 +28,7 @@ const Payment = () => {
         const dateArray = [];
 
         while (sdate <= end) {
-            dateArray.push(new Date(sdate).getTime());
+            dateArray.push(new Date(sdate));
             sdate.setDate(sdate.getDate() + 1);
             // console.log(sdate.getDate());
         }
@@ -42,7 +42,6 @@ const Payment = () => {
     const hotelData = details.hotelData;
     const [status, setStatus] = useState(false);
     const [date, setDate] = useState(details.date);
-    const [openDate, setOpenDate] = useState(false);
 
     const alldate = getDateInRange(date[0].startDate, date[0].endDate);
     const days = dayDifference(date[0].endDate, date[0].startDate);
@@ -51,7 +50,6 @@ const Payment = () => {
 
     // console.log("Payments :", details);
     // console.log("alldate :", alldate);
-
 
     const handleCheckout = async (e) => {
         e.preventDefault();
@@ -110,25 +108,15 @@ const Payment = () => {
                                         </span>
                                     </div>
                                     <div className="selOptions">
-                                        <div className="editDate">
+                                        <div className="optionsWhite">
                                             <FontAwesomeIcon icon={faCalendarDays} className="bookIcon" />
-                                            <span className="bookText" onClick={() => { setOpenDate(!openDate) }}>
+                                            <span className="bookText" >
                                                 {`${format(date[0].startDate, "dd/MM/yyy")} to ${format(date[0].endDate, "dd/MM/yyy")}`}
                                             </span>
-                                            {openDate && <DateRange
-                                                editableDateInputs={true}
-                                                onChange={(item) => {
-
-                                                    setDate([item.selection]);
-                                                    console.log("sel:", item.selection);
-                                                }}
-                                                moveRangeOnFirstSelection={false}
-                                                ranges={[{ ...date[0], key: 'selection' }]}
-                                                minDate={new Date()}
-                                                className="bookDate"
-                                            />}
                                         </div>
-                                        <span>Rooms: {rooms}</span>
+                                        <div className="optionsWhite">
+                                            <span>Rooms: {rooms}</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="bookDetails">
@@ -161,7 +149,7 @@ const Payment = () => {
                                 <button onClick={handleCheckout} className="checkoutButton">
                                     CHECKOUT
                                 </button>
-                                {status && <span className="successUpdate"><FontAwesomeIcon icon={faCheckCircle} /> Booked successfully!</span>}
+                                {status && <span className="bookSuccessUpdate"><FontAwesomeIcon icon={faCheckCircle} /> Booked successfully!</span>}
                             </div>
                         </div>
                     </div>

@@ -43,6 +43,8 @@
 .rHeading{
   display: flex;
   justify-content: center;
+  font-weight: 500;
+  /* font-size: 1.2rem; */
 }
 
 .rItem {
@@ -103,4 +105,28 @@
   border-radius: 0.5rem;
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+.editDates{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.editDates>span{
+  padding: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #0071c2;
+}
+
+.reserveDates{
+  position: absolute;
+  top: 4rem;
+  left: 5rem;
+  border: 0.1rem solid #0071c2;
+  border-radius: 0.3rem;
 }

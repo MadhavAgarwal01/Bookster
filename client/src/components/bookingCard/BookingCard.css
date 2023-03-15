@@ -1,0 +1,199 @@
+
+  .hotelCard{
+    background-color: #F6F4F2;
+    width: 90%;
+    min-height: fit-content;
+    height: 16rem;
+    max-height: 50%;
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .priceDiv{
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .priceDiv>span{
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  
+  .priceDiv>h1{
+    font-size: 2rem;
+  }
+  
+  .imgFeatures{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 10rem;
+  }
+  
+  .bookCancelPolicy{
+    top: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .bookCancelOp{
+    font-size: 1rem;
+    color: #008009;
+    font-weight: bold;
+  }
+  
+  .bookCancelOpSubtitle{
+    font-size: 0.8rem;
+    color: #008009;
+  }
+  
+  .bookImg{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  .bookDesc{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    justify-content: space-between;
+  }
+  
+  .hotelPerks{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .bookTitle{
+    font-size: 1.4rem;
+    color: #0071c2;
+  }
+  
+  .bookDistance{
+    font-size: 1rem;
+    /* text-transform: capitalize; */
+  }
+  
+  .costCard{
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: right;
+  }
+  
+  .costCard>p{
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+  }
+  
+  .bookTaxiOp{
+    font-size: 0.9rem;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+  }
+  
+  .bookSubtitle{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .bookFeatures{
+    font-size: 1rem;
+  }
+  
+  .bookDetails{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .bookRating{
+    display: flex;
+    justify-content: right;
+    gap: 0.6rem;  
+  }
+  
+  .ratingReviews{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ratingReviews>span{
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+  
+  .ratingReviews>p{
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-align: right;
+  }
+  
+  .bookRating>button{
+    background-color: #003580;
+    border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .bookDetailTexts{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bookPrice{
+    font-size: 1.5rem;
+  }
+  
+  .bookTaxOp{
+    font-size: 0.8rem;
+    color: gray;
+  }
+  
+  .bookCheckButton{
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-top: 0.3rem;
+    width: 8rem;
+  }
+  
+  .selOptions{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bookIcon{
+    padding: 0.2rem;
+  }
+  
+  .bookDate{
+    position:absolute;
+    left:28rem;
+    top: 30rem;
+  }
+  
+  .selOptions>span{
+    padding: 0.5rem;
+  }
+  
+  .html{
+    font-size: 62.5%;
+  }

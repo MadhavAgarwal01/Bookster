@@ -12,6 +12,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import UserHome from "./pages/userHome/UserHome";
 import Payment from "./pages/payment/Payment";
+import UserBooking from "./pages/userBookings/UserBookings";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<UserHome />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/bookings" element={<UserBooking />} />
       </Routes>
     </BrowserRouter>
   );
