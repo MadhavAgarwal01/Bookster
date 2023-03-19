@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .listContainer{
     display: flex;
     justify-content: center;
@@ -14,7 +16,7 @@
 
 .listSearch{
     flex: 1;
-    background-color: #febb02;
+    background-color: var(--primary_yellow);
     padding: 0.6rem;
     border-radius: 0.5rem;
     position: sticky;
@@ -24,7 +26,7 @@
 
 .lsTitle{
     font-size: 1.5rem;
-    color: #555;
+    color: var(--dark_gray);
     margin-bottom: 1rem;
 }
 
@@ -44,17 +46,17 @@
     border: none;
     padding: 0.6rem;  
     border: none;
-    color: black;
+    color: var(--primary_black);
 }
 
 .lsItem>span{
     height: 1.4rem;
     padding: 0.6rem;  
-    background-color: white;
+    background-color: var(--primary_white);
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: black;
+    color: var(--primary_black);
     margin-bottom: 1rem;
 }
 
@@ -62,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.8rem;
-    color: #555;
+    color: var(--dark_gray);
     font-size: 1rem;
 }
 
@@ -76,8 +78,8 @@
 
 .lsSearch{
     padding: 1rem;
-    background-color: #0071c2;;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     border: none;
     width: 100%;
     font-weight: 500;

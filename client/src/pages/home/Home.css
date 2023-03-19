@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .homeContainer{
     margin-top: 6rem;
     display: flex;

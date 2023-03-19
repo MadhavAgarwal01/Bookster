@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .payment{
   display: flex;
   flex-direction: column;
@@ -5,9 +7,9 @@
 }
 
 .fakeHeader{
-  background-color: #003580;
+  background-color: var(--primary_blue);
   height: 2rem;
-  border-bottom: 0.2rem solid #febb02;
+  border-bottom: 0.2rem solid var(--primary_yellow);
 }
 
 .paymentContainer{
@@ -33,10 +35,10 @@
   /* margin-top: 3rem; */
   display: flex;
   flex-direction: column;
-  background-color: #003588;
+  background-color: var(--primary_blue);
   border-radius: 0.5rem;
   padding: 1rem;
-  color: white;
+  color: var(--primary_white);
   gap: 0.5rem;
 }
 
@@ -45,7 +47,7 @@
   padding: 0.5rem 2rem;
   width: 12rem;
   cursor: pointer;
-  background-color: #febb02;
+  background-color: var(--primary_yellow);
   border-radius: 0.3rem;
   margin-top: 1rem;
   font-weight: 500;
@@ -53,11 +55,11 @@
 }
 
 .checkoutButton:disabled{
-  background-color: #555;
+  background-color: var(--dark_gray);
 }
 
 .bookSuccessUpdate{
-  color: white;
+  color: var(--primary_white);
   margin-top: 1rem;
 }
 

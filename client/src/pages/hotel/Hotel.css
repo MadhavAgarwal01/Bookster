@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .hotelContainer {
     display: flex;
     flex-direction: column;
@@ -20,8 +22,8 @@
     right: 0;
     border: none;
     padding: 1rem 2rem;
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: bold;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -40,12 +42,12 @@
   }
   
   .hotelDistance {
-    color: #0071c2;
+    color: var(--secondary_blue);
     font-weight: 500;
   }
   
   .hotelPriceHighlight {
-    color: #008009;
+    color: var(--primary_green);
     font-weight: 500;
   }
   
@@ -84,7 +86,7 @@
   
   .hotelDetailsPrice {
     flex: 1;
-    background-color: #ebf3ff;
+    background-color: var(--light_blue);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -93,7 +95,7 @@
   
   .hotelDetailsPrice > h1 {
     font-size: 1.5rem;
-    color: #555;
+    color: var(--dark_gray);
   }
   .hotelDetailsPrice > span {
     font-size: 1.2rem;
@@ -104,8 +106,8 @@
   .hotelDetailsPrice > button {
     border: none;
     padding: 1rem 2rem;
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: bold;
     cursor: pointer;
     border-radius: 0.5rem;
@@ -117,7 +119,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.613);
+    background-color: var(--background_shadow);
     z-index: 999;
     display: flex;
     align-items: center;

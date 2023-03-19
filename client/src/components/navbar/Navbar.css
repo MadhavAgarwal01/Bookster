@@ -1,6 +1,8 @@
+@import "../../common/root.css";
+
 .navbar{
     height: 5rem;
-    background-color: #003580;
+    background-color: var(--primary_blue);
     display: flex;
     justify-content: center;
 }
@@ -8,7 +10,7 @@
 .navContainer{
     width: 100%;
     max-width: 64rem;
-    color: white;
+    color: var(--primary_white);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,7 +36,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
-    background-color: #F6F4F2;
+    background-color: var(--seconday_white);
     z-index: 5;
     width: 9rem;
     margin-top: 2.5rem;
@@ -47,8 +49,8 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: white;
-    background-color: #0071c2;
+    color: var(--primary_white);
+    background-color: var(--secondary_blue);
     border-radius: 0.3rem;
 }
 
@@ -60,7 +62,7 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #003580;
+    color: var(--primary_blue);
 }
 
 .html{

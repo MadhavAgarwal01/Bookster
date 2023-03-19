@@ -1,0 +1,20 @@
+:root {
+    --primary_blue: #003580;
+    --secondary_blue: #0071c2;
+    --light_blue: #ebf3ff;
+    
+    --primary_white: white;
+    --seconday_white: #F6F4F2;
+    
+    --primary_gray: gray;
+    --secondary_gray: lightgray;
+    --dark_gray: #555;
+    
+    --primary_yellow: #febb02;
+    --primary_green: #008009;
+    --primary_black: black;
+
+    --disabled_color: #0071c28c;
+    --background_shadow: rgba(0, 0, 0, 0.613);
+  }
+  

@@ -1,7 +1,9 @@
-  /* TABLET and MOBILE*/
-  @media screen and (max-width: 1023px) {
-    #firstItem{
-        position: relative;
-        left: 1rem;
-    }
+@import "../../common/root.css";
+  
+/* TABLET and MOBILE*/
+@media screen and (max-width: 1023px) {
+  #firstItem{
+      position: relative;
+      left: 1rem;
+  }
 }

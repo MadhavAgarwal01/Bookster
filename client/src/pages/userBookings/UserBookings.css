@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .userBookingsPage{
   display: flex;
   flex-direction: column;
@@ -5,9 +7,9 @@
 }
 
 .fakeHeader{
-  background-color: #003580;
+  background-color: var(--primary_blue);
   height: 2rem;
-  border-bottom: 0.2rem solid #febb02;
+  border-bottom: 0.2rem solid var(--primary_yellow);
 }
 
 .bookingsContainer {

@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .fp {
     width: 100%;
     max-width: 64rem;
@@ -23,7 +25,7 @@
   }
   
   .fpName{
-    color: #333;
+    color: var(--primary_black);
     font-weight: bold;
   }
   
@@ -36,8 +38,8 @@
   }
   
   .fpRating>button{
-    background-color: #003580;
-    color: white;
+    background-color: var(--primary_blue);
+    color: var(--primary_white);
     border: none;
     padding: 0.3rem;
     margin-right: 1rem;

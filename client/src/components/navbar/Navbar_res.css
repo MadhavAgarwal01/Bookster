@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 /* TABLET */
 @media screen  and (min-width: 769px) and (max-width: 1023px) {
 
@@ -5,7 +7,7 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #003580;
+    color: var(--primary_blue);
 }
 }
 
@@ -16,7 +18,7 @@
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #003580;
+    color: var(--primary_blue);
     margin-left: 0rem;
 }
 

@@ -1,11 +1,13 @@
+@import "../../common/root.css";
+
 .header {
-    background-color: #003580;
-    color: white;
+    background-color: var(--primary_blue);
+    color: var(--primary_white);
     display: flex;
     justify-content: center;
     position: relative;
     z-index: 2;
-    border-bottom: 0.2rem solid #febb02;
+    border-bottom: 0.2rem solid var(--primary_yellow);
   }
   
   .headerContainer {
@@ -37,16 +39,16 @@
     gap: 0.5rem;
     cursor: pointer;
     padding: 0.8rem;
-    border: 0.1rem solid #003580;
+    border: 0.1rem solid var(--primary_blue);
   }
 
   .headerListItem.active{
-    border: 0.1rem solid white;
+    border: 0.1rem solid var(--primary_white);
     border-radius: 1rem;
   }
 
   .headerListItem:hover{
-    border: 0.1rem solid white;
+    border: 0.1rem solid var(--primary_white);
     border-radius: 1rem;
   }
 
@@ -55,8 +57,8 @@
   }
 
   .headerBtn{
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: 500;
     border: none;
     padding: 0.5rem;
@@ -65,8 +67,8 @@
 
   .headerSearch{
     height: 2rem;
-    background-color: #febb02;
-    border: 0.2rem solid #febb02;
+    background-color: var(--primary_yellow);
+    border: 0.2rem solid var(--primary_yellow);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -80,14 +82,14 @@
   }
   
   .headerIcon{
-    color: lightgray;
+    color: var(--secondary_gray);
   }
   
   .headerSearchItem{
     display: flex;
     /* align-items: center; */
     gap: 0.1rem;
-    background-color: white;
+    background-color: var(--primary_white);
     padding: 1.3rem 2.7rem;
     font-size: 1rem;
   }
@@ -97,8 +99,8 @@
     padding: 1.3rem;
     font-weight: 500;
     border-radius:  0rem 0.5rem 0.5rem 0rem;
-    color: white;
-    background-color: #0071c2;
+    color: var(--primary_white);
+    background-color: var(--secondary_blue);
     border: none;
     cursor: pointer;
   }
@@ -109,7 +111,7 @@
   }
   
   .headerSearchText{
-    color: lightgray;
+    color: var(--secondary_gray);
     cursor: pointer;
   }
 
@@ -124,10 +126,10 @@
     z-index: 2;
     position: absolute;
     top: 5.2rem;
-    background-color: white;
-    color: gray;
+    background-color: var(--primary_white);
+    color: var(--primary_gray);
     border-radius: 0.5rem;
-    box-shadow: 0rem 0rem 1rem -0.5rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0rem 0rem 1rem -0.5rem var(--background_shadow);
   }
 
   .optionItem{
@@ -142,16 +144,16 @@
     align-items: center;
     gap: 1rem;
     font-size: 1.2rem;
-    color: black;
+    color: var(--primary_black);
   }
 
   .optionCounterButton{
     width: 3rem;
     height: 3rem;
-    border: 0.1rem solid #0071c2;
-    color: #0071c2;
+    border: 0.1rem solid var(--secondary_blue);
+    color: var(--secondary_blue);
     cursor: pointer;
-    background-color: white;
+    background-color: var(--primary_white);
   }
 
   .optionCounterButton:disabled{

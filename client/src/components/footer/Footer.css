@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .footer{
     width: 100%;
     max-width: 64rem;
@@ -19,7 +21,7 @@
 
 .fListItem{
     margin-bottom: 1rem;
-    color: #003580;
+    color: var(--primary_blue);
     cursor: pointer;
 }
 

@@ -1,6 +1,8 @@
+@import "../../common/root.css";
+
 .mail{
     width: 100%;
-    background-color: #003580;
+    background-color: var(--primary_blue);
     display: flex;
     justify-content: center;
     margin-top: 5rem;
@@ -8,7 +10,7 @@
 
 .mailContainer{
     width: 100%;
-    color: white;
+    color: var(--primary_white);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,8 +39,8 @@
     height: 3.1rem;
     width: 15rem;
 
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: 500;
 
     border: none;

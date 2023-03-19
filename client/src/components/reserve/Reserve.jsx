@@ -104,7 +104,7 @@ const Reserve = ({ setOpen, hotelData, con_date }) => {
                                 <div className="rTitle">{item.title}</div>
                                 <div className="rDesc">{item.desc}</div>
                                 <div className="rMax">
-                                    Max people: <b>{item.maxPeople}</b>
+                                    Max people: {item.maxPeople}
                                 </div>
                                 <div className="rPrice">${item.price}</div>
                             </div>

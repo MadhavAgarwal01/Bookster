@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .reserve {
   top: 0;
   left: 0;
@@ -9,7 +11,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.613);
+  background-color: var(--background_shadow);
 }
 
 .roomContainer {
@@ -17,8 +19,8 @@
   padding: 1rem;
   border-radius: 0.5rem;
   position: relative;
-  background-color: #F6F4F2;
-  color: black;
+  background-color: var(--seconday_white);
+  color: var(--primary_black);
 }
 
 .rClose {
@@ -53,7 +55,7 @@
   flex-wrap: wrap;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: white;
+  background-color: var(--primary_white);
 }
 
 .rItemInfo {
@@ -84,7 +86,7 @@
   flex-wrap: wrap;
   gap: 0.3rem;
   font-size: 0.5rem;
-  color: gray;
+  color: var(--primary_gray);
   flex: 1;
   justify-content: center;
 }
@@ -98,8 +100,8 @@
   border: none;
   width: 100%;
   padding: 1rem;
-  background-color: #0071c2;
-  color: white;
+  background-color: var(--secondary_blue);
+  color: var(--primary_white);
   font-weight: bold;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -117,16 +119,16 @@
 
 .editDates>span{
   padding: 0.5rem;
-  background-color: white;
+  background-color: var(--primary_white);
   cursor: pointer;
   border-radius: 0.5rem;
-  border: 0.1rem solid #0071c2;
+  border: 0.1rem solid var(--secondary_blue);
 }
 
 .reserveDates{
   position: absolute;
   top: 4rem;
   left: 5rem;
-  border: 0.1rem solid #0071c2;
+  border: 0.1rem solid var(--secondary_blue);
   border-radius: 0.3rem;
 }

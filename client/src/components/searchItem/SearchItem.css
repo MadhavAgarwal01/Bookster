@@ -1,5 +1,7 @@
+@import "../../common/root.css";
+
 .searchItem{
-    border: 0.1rem solid lightgray;
+    border: 0.1rem solid var(--secondary_gray);
     min-height: 14rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -26,13 +28,13 @@
 
 .siCancelOp{
     font-size: 1rem;
-    color: #008009;
+    color: var(--primary_green);
     font-weight: bold;
 }
 
 .siCancelOpSubtitle{
     font-size: 0.8rem;
-    color: #008009;
+    color: var(--primary_green);
 }
 
 .siImg{
@@ -58,7 +60,7 @@
 
 .siTitle{
     font-size: 1.4rem;
-    color: #0071c2;
+    color: var(--secondary_blue);
 }
 
 .siDistance{
@@ -67,8 +69,8 @@
 
 .siTaxiOp{
     font-size: 0.9rem;
-    background-color: #008009;
-    color: white;
+    background-color: var(--primary_green);
+    color: var(--primary_white);
     width: max-content;
     padding: 0.3rem;
     border-radius: 0.2rem;
@@ -114,9 +116,9 @@
 }
 
 .siRating>button{
-    background-color: #003580;
+    background-color: var(--primary_blue);
     border-radius: 0.5rem 0.5rem 0.5rem 0rem;
-    color: white;
+    color: var(--primary_white);
     padding: 0.5rem;
     font-weight: bold;
     border: none;
@@ -149,8 +151,8 @@
 }
 
 .siCheckButton{
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: bold;
     padding: 0.8rem 1rem;
     border: none;

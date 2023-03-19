@@ -1,25 +1,27 @@
+@import "../../common/root.css";
+
 .login {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F6F4F2;
+    background-color: var(--seconday_white);
   }
   
   .lContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #003580;
+    background-color: var(--primary_blue);
     width: fit-content;
     padding: 2rem;
     border-radius: 0.5rem;
     align-items: center;
-    color: white;
+    color: var(--primary_white);
   }
   
   .loginPage{
-    color: white;
+    color: var(--primary_white);
     margin-bottom: 3rem;
   }
 
@@ -43,8 +45,8 @@
     width: 18rem;
     border: none;
     padding: 1rem 2rem;
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: bold;
     cursor: pointer;
     border-radius: 0.3rem;
@@ -53,7 +55,7 @@
   }
   
   .lButton:disabled{
-    background-color: #0071c28c;
+    background-color: var(--disabled_color);
     cursor: not-allowed;
   }
 

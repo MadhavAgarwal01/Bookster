@@ -1,6 +1,7 @@
+@import "../../common/root.css";
 
 .hotelCard{
-  background-color: #F6F4F2;
+  background-color: var(--seconday_white);
   width: 90%;
   min-height: fit-content;
   height: 16rem;
@@ -41,13 +42,13 @@
   
   .bookCancelOp{
     font-size: 1rem;
-    color: #008009;
+    color: var(--primary_green);
     font-weight: bold;
   }
   
   .bookCancelOpSubtitle{
     font-size: 0.8rem;
-    color: #008009;
+    color: var(--primary_green);
   }
   
   .bookImg{
@@ -72,7 +73,7 @@
   
   .bookTitle{
     font-size: 1.4rem;
-    color: #0071c2;
+    color: var(--secondary_blue);
   }
   
   .bookDistance{
@@ -91,8 +92,8 @@
   
   .bookTaxiOp{
     font-size: 0.9rem;
-    background-color: #008009;
-    color: white;
+    background-color: var(--primary_green);
+    color: var(--primary_white);
     width: max-content;
     padding: 0.3rem;
     border-radius: 0.2rem;
@@ -138,7 +139,7 @@
   }
   
   .bookRating>button{
-    background-color: #003580;
+    background-color: var(--primary_blue);
     border-radius: 0.5rem 0.5rem 0.5rem 0rem;
     color: white;
     padding: 0.5rem;
@@ -158,12 +159,12 @@
   
   .bookTaxOp{
     font-size: 0.8rem;
-    color: gray;
+    color: var(--primary_gray);
   }
   
   .bookCheckButton{
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
     font-weight: bold;
     padding: 0.8rem 1rem;
     border: none;
@@ -178,7 +179,7 @@
     gap: 0.5rem;
     display: flex;
     padding: 0.5rem;
-    background-color: white;
+    background-color: var(--primary_white);
     border-radius: 0.5rem;
   }
   
@@ -215,8 +216,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: #0071c2;
-    color: white;
+    background-color: var(--secondary_blue);
+    color: var(--primary_white);
 
     position: relative;
     top: 3rem;

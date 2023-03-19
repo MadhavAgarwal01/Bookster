@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 /* Mobile */
 @media screen and (max-width: 768px) {
     .listWrapper{
@@ -10,7 +12,7 @@
 
     .listSearch{
         flex: 1;
-        background-color: #febb02;
+        background-color: var(--primary_yellow);
         padding: 0.6rem;
         border-radius: 0.5rem;
         position: static;
@@ -22,8 +24,8 @@
         display: flex;
         justify-content: space-between;
         border: none;
-        background-color: #febb02;
-        color: #555;
+        background-color: var(--primary_yellow);
+        color: var(--dark_gray);
         border-radius: 0.5rem;
         padding: 1rem;
     }

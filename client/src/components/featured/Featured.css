@@ -1,3 +1,5 @@
+@import "../../common/root.css";
+
 .featured{
     width: 100%;
     max-width: 64rem;
@@ -10,7 +12,7 @@
 
 .featuredItem{
     position: relative;
-    color: white;
+    color: var(--primary_white);
     border-radius: 1rem;
     overflow: hidden;
     height: 16rem;
