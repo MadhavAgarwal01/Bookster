@@ -27,28 +27,24 @@ A full-stack hotel booking responsive website with session and state management.
 
 - Home page
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/Full_1.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/1.%20Home_M.png)
 
 - Property Search Page
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/Full_2.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/2.%20List_M.png)
 
 - Individual Hotel Page
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/Full_3.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/3.%20Hotel.png)
 
 - Room reservation
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/Full_4.png)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/4.%20Reserve_M.png)
 
 - Checkout Page
 
 ![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/5.%20Checkout_M.png)
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/6.%20Checkout_M.png)
-
 - Responsive Design
 
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_5.jpg)
-
-![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/res_6.jpg)
+![App Screenshot](https://github.com/MadhavAgarwal01/Bookster/blob/main/Images/6.%20Responsive_M.png)
