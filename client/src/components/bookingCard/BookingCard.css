@@ -1,15 +1,15 @@
 
-  .hotelCard{
-    background-color: #F6F4F2;
-    width: 90%;
-    min-height: fit-content;
-    height: 16rem;
-    max-height: 50%;
-    border-radius: 0.5rem;
-    display: flex;
-    padding: 1rem;
-    gap: 1rem;
-  }
+.hotelCard{
+  background-color: #F6F4F2;
+  width: 90%;
+  min-height: fit-content;
+  height: 16rem;
+  max-height: 50%;
+  border-radius: 0.5rem;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
   
   .priceDiv{
     display: flex;
@@ -77,12 +77,10 @@
   
   .bookDistance{
     font-size: 1rem;
-    /* text-transform: capitalize; */
   }
   
   .costCard{
     display: flex;
-    /* align-items: flex-end; */
     justify-content: right;
   }
   
@@ -149,7 +147,7 @@
   }
   
   .bookDetailTexts{
-    text-align: right;
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
   }
@@ -174,10 +172,14 @@
     margin-top: 0.3rem;
     width: 8rem;
   }
+
   
-  .selOptions{
+  .optionsWhite{
+    gap: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
   }
   
   .bookIcon{
@@ -189,11 +191,48 @@
     left:28rem;
     top: 30rem;
   }
-  
+
+  .selOptions{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    position: relative;
+  }
+
   .selOptions>span{
     padding: 0.5rem;
   }
-  
+
+  .roomsTooltip{
+  cursor: pointer;
+  }
+
+  .roomPopUp{
+    position: absolute;
+  }
+
+  .bookedRoomDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #0071c2;
+    color: white;
+
+    position: relative;
+    top: 3rem;
+    left: 16rem;
+
+    width: fit-content;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    z-index: 5;
+  }
+
+  .AllBookingsRoomTypes{
+    top: -3rem;
+    left: 24rem;
+  }
+
   .html{
     font-size: 62.5%;
   }

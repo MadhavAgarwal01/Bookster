@@ -48,6 +48,15 @@ export const getRoom = async (req, res, next) => {
     }
 };
 
+export const getRoomType = async (req, res, next) => {
+    try {
+        const room = await Room.find({ "roomNumbers._id": req.params.roomNumberID });
+        res.status(200).json(room);
+    } catch (err) {
+        next(err);
+    }
+};
+
 export const getAllRooms = async (req, res, next) => {
     try {
         const rooms = await Room.find();

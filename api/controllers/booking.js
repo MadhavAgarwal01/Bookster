@@ -9,8 +9,13 @@ export const createBooking = async (req, res, next) => {
     console.log("Request: ", req.data)
 
     try {
-        const savedBooking = await newbooking.save();
-        console.log("Saved Booking: ", savedBooking);
+
+        try {
+            const savedBooking = await newbooking.save();
+            console.log("Saved Booking: ", savedBooking);
+        } catch (err) {
+            console.log("[Booking DB] Booking err: ", err.message);
+        }
 
         await Promise.all(
             selectedRooms.map(async (roomId) => {
@@ -24,7 +29,7 @@ export const createBooking = async (req, res, next) => {
         res.status(200).json("Booking Successfull");
 
     } catch (err) {
-        console.log("Booking err: ", err.message);
+        console.log("[Backend] Booking err: ", err.message);
         if (err.message.includes("MongoServerError: E11000 duplicate key error collection")) {
             return next(createError(500, "Duplicate mongoDB keys in database"));
         } else {

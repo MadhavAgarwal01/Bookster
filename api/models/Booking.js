@@ -11,8 +11,7 @@ const BookingSchema = new mongoose.Schema(
         },
         date: {
             type: [Date],
-            required: true,
-            unique: true
+            required: true
         },
         roomId: {
             type: [String],

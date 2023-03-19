@@ -11,6 +11,7 @@ import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns"
+import BookingCard from "../../components/bookingCard/BookingCard";
 
 const Payment = () => {
 
@@ -47,32 +48,39 @@ const Payment = () => {
     const days = dayDifference(date[0].endDate, date[0].startDate);
     const rooms = details.selectedRooms.length;
     const cost = days * hotelData.cheapestPrice * rooms;
-
+    const mode = "hotel_details"
     // console.log("Payments :", details);
     // console.log("alldate :", alldate);
+    const bookingInfo = {
+        userId: user._id,
+        hotelId: hotelData._id,
+        roomId: details.selectedRooms,
+        date: alldate,
+        price: cost
+    };
 
     const handleCheckout = async (e) => {
         e.preventDefault();
         try {
-            const bookingInfo = {
-                userId: user._id,
-                hotelId: hotelData._id,
-                roomId: details.selectedRooms,
-                date: alldate,
-                price: cost
-            };
             console.log("BookingInfo : ", bookingInfo);
 
-            const res = axios.post(`/booking/${user._id}`, bookingInfo);
-            console.log("Res : ", res);
-            // return res.data;
-
-            setStatus(!status);
+            axios.post(`/booking/${user._id}`, bookingInfo)
+                .then((res) => {
+                    console.log(res.data);
+                    setStatus(!status);
+                })
+                .catch((err) => {
+                    console.log("[Frontend] Booking err:", err);
+                })
 
         } catch (err) {
             console.log(err);
         }
     };
+
+    const backToHotel = (bookingID) => {
+        navigate(`/hotels/${hotelData._id}`)
+    }
 
     try {
         return (
@@ -83,61 +91,14 @@ const Payment = () => {
                     <div className="paymentContainer">
                         <div className="bookingDetails">
                             <h2>Checkout</h2>
-                            <div className="hotelCard">
-                                <div className="imgFeatures">
-                                    <img
-                                        src={hotelData.photos[0]}
-                                        alt=""
-                                        className="bookImg"
-                                    />
-                                    <span className="bookFeatures">{hotelData.desc}</span>
-                                </div>
-                                <div className="bookDesc">
-                                    <div className="hotelPerks">
-                                        <h1 className="bookTitle">{hotelData.name}</h1>
-                                        <span className="bookDistance">{hotelData.distance}m from {hotelData.city} center</span>
-                                        <span className="bookTaxiOp">Free airport taxi</span>
-                                        <span className="bookSubtitle">
-                                            Studio Apartment with Air conditioning
-                                        </span>
-                                    </div>
-                                    <div className="bookCancelPolicy">
-                                        <span className="bookCancelOp">Free cancellation </span>
-                                        <span className="bookCancelOpSubtitle">
-                                            You can cancel later, so lock in this great price today!
-                                        </span>
-                                    </div>
-                                    <div className="selOptions">
-                                        <div className="optionsWhite">
-                                            <FontAwesomeIcon icon={faCalendarDays} className="bookIcon" />
-                                            <span className="bookText" >
-                                                {`${format(date[0].startDate, "dd/MM/yyy")} to ${format(date[0].endDate, "dd/MM/yyy")}`}
-                                            </span>
-                                        </div>
-                                        <div className="optionsWhite">
-                                            <span>Rooms: {rooms}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="bookDetails">
-                                    {hotelData.rating || <div className="bookRating">
-                                        <div className="ratingReviews">
-                                            <span>Excellent</span>
-                                            <p>66 reviews</p>
-                                        </div>
-                                        <button>{hotelData.rating || 9.6}</button>
-                                    </div>}
-                                    <div className="bookDetailTexts">
-                                        <div className="costCard">
-                                            <span className="siPrice">${hotelData.cheapestPrice}</span><p>&nbsp;/night</p>
-                                        </div>
-                                        <span className="bookTaxOp">Includes taxes & fees</span>
-                                        <Link to={`/hotels/${hotelData._id}`}>
-                                            <button className="bookCheckButton">Cancel</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
+                            <BookingCard
+                                data={{
+                                    booking: bookingInfo,
+                                    hotelData: hotelData,
+                                    cancelCallback: backToHotel
+                                }}
+                                mode={mode}
+                            />
                         </div>
                         <div className="paymentDetails">
                             <div className="paymentCard">

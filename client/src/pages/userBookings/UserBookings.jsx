@@ -16,7 +16,6 @@ const UserBooking = () => {
     const navigate = useNavigate();
     var { user } = useContext(AuthContext);
     var { data, loading, error, reFetch } = useFetch(`/booking/${user._id}`);
-    // console.log("Data : ", data);
 
     const [bookings, setBookings] = useState([]);
 
@@ -30,11 +29,7 @@ const UserBooking = () => {
                             hotelData: res.data,
                             cancelCallback: deleteBooking
                         }
-                        console.log("old bookings:", bookings)
-                        setBookings([
-                            ...bookings,
-                            item
-                        ]);
+                        setBookings(bookings => [...bookings, item]);
                         console.log("bookings:", bookings)
                     })
                     .catch((err) => {
@@ -43,23 +38,26 @@ const UserBooking = () => {
             })
         }
     }
-    useEffect(combineData, [data]);
+    useEffect(() => {
+        console.log("Data : ", data);
+        setBookings([]);
+        combineData();
+    }, [data.length]);
 
     const deleteBooking = async (bookingID) => {
         console.log('Delete button clicked for: ', bookingID);
 
         // delete sequence
-        try {
-            const res = axios.delete(`/booking/${user._id}/${bookingID}`);
-            console.log("Deleted res: ", res);
-
-            // Refresh sequence
-            setBookings([]);
-            reFetch();
-
-        } catch (err) {
-            console.log("Delete error: ", err);
-        }
+        axios.delete(`/booking/${user._id}/${bookingID}`)
+            .then((res) => {
+                // Refresh sequence
+                console.log("Deleted res: ", res.data);
+                setBookings([]);
+                reFetch();
+            })
+            .catch((err) => {
+                console.log("Delete error: ", err);
+            })
     }
 
     try {
@@ -80,6 +78,7 @@ const UserBooking = () => {
                                             <BookingCard
                                                 key={item._id}
                                                 data={item}
+                                                mode="booking_details"
                                             />
                                         ))}
                                     </>
