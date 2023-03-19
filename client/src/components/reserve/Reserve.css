@@ -15,7 +15,7 @@
 }
 
 .roomContainer {
-  height: 80%;
+  height: fit-content;
   padding: 1rem;
   border-radius: 0.5rem;
   position: relative;
